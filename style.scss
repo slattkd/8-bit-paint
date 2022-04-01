@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+body {
+	background-color: #3c3c3c;
+	font-family: Roboto, sans-serif;
+}
+
+.wrap {
+	display: flex;
+	justify-content: center;
+	height: 80vh;
+}
+
+.parent {
+	display: grid;
+	grid-template-columns: repeat(30, 1fr);
+	grid-template-rows: repeat(30, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	border: 1px solid gray;
+	grid-template-rows: masonry;
+	max-height: 90vh;
+	aspect-ratio: 1;
+	div.cell {
+		border-right: 0.25px solid rgba(15, 15, 15, 0.1);
+		border-bottom: 0.25px solid rgba(15, 15, 15, 0.1);
+		aspect-ratio: 1;
+		cursor: pointer;
+		&:not(.active) {
+			background-color: transparent;
+		}
+	}
+}
+
+button {
+	padding: 10px;
+	text-transform: uppercase;
+	background: none;
+	border: 1px solid gray;
+	cursor: pointer;
+	margin-bottom: 1em;
+	span {
+		color: #e3e3e3;
+		filter: invert(1) contrast(10);
+		svg {
+			width: 2em;
+			height: 2em;
+		}
+	}
+	&:hover {
+		border: 1px solid white;
+		background-color: #3f3f3f;
+		box-shadow: 2px 2px 3px 2px rgba(50,50,50, 0.7);
+	}
+}
+
+
+input {
+	visibility: hidden;
+	height: 0;
+	width: 0;
+}
+
+.palette {
+	color: gray;
+	padding-left: 1em;
+	margin-left: 1em;
+	display: flex;
+	flex-direction: column;
+	& .swatch {
+		height: 3em;
+		width: 3em;
+		border: 1px solid gray;
+		margin-bottom: 1em;
+		cursor: pointer;
+		&:hover {
+			border: 1px solid white;
+			box-shadow: 2px 4px 3px 2px rgba(50,50,50, 0.7);
+		}
+	}
+	& #recent-colors {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.input-row {
+	margin-right: 2rem;
+	color: gray;
+	select {
+		background: #3c3c3c;
+		color: gray;
+		padding: 5px 10px;
+		font-size: 1.1rem;
+	}
+}
